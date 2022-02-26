@@ -7,6 +7,9 @@ data <- titanic_train[,2:12]
 data <- data[, c(1,5)] #take out categories that aren't relevant + sex + age
 data <- na.omit(data)
 
+summary(data[which(data$Survived == 1),2])
+summary(data[which(data$Survived == 0),2])
+
 #Dividing the data into a train and a test set
 sample <- sample(seq(1,2), size = nrow(data), replace = TRUE, prob = c(0.8,0.2))
 data_train <- data[sample == 1, ]
