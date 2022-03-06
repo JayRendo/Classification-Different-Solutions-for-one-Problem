@@ -14,8 +14,10 @@ data_test <- data[sample == 2, ]
 
 #Computing the densities and using them for classification
 library(np)
+library(MASS)
 list_dens = rep(NA, 10)
 for (i in 1:10){
-  bw <- npudensbw(tdat = data_train[which(data_train$c == i-1), 1:64])
+  bw <- bandwidth.nrd(data_train[which(data_train$c == i-1),1:64])
   list_dens[i] <- npudens(bw)
 }
+
