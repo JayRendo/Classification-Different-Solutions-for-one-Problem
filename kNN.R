@@ -12,7 +12,7 @@ data_test <- data[sample == 2, ]
 #testing the performance of the algorithm, depnding on the value of k
 library(class)
 classif_rate <- rep(NA, 121)
-for(k in 1:121){ #above 121 we get warnings
+for(k in 1:121){ #121 observations in our training dataset
   y_pred <- knn(data_train[,c(2,3)],  data_test[,c(2,3)], data_train$Sex, k = k)
   count <- 0
   for (i in 1:nrow(data_test)) {
