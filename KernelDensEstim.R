@@ -10,7 +10,7 @@ sample <- sample(seq(1,2), size = nrow(data), replace = TRUE, prob = c(0.7,0.3))
 data_train <- data[sample == 1, ]
 data_test <- data[sample == 2, ]
 
-acc <- rep(-1,100)
+acc <- rep(NA,100)
 bwvec <- seq(from = 0.01, to = 1, by = 0.01)
 for(j in 1:100){
 
