@@ -1,3 +1,4 @@
+set.seed(1)
 #Uploading the data
 data <- Titanic 
 data <- data.frame(data)
@@ -14,11 +15,9 @@ library(bnlearn)
 
 tree <- chow.liu(data_train)
 plot(tree)
-tree = set.arc(tree, from = "Age", to = "Survived")
 tree = set.arc(tree, from = "Sex", to = "Age")
 tree = set.arc(tree, from = "Class", to = "Age")
 tree = set.arc(tree, from = "Class", to = "Survived")
-tree = set.arc(tree, from = "Sex", to = "Class")
 plot(tree)
 fit = bn.fit(tree,data)
 fit
