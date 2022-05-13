@@ -5,7 +5,7 @@ set.seed(1)
 library(titanic)
 library(MASS)
 data <- titanic_train[,2:12]
-data <- data[, c(1,5)] #take out categories that aren't relevant + sex + age
+data <- data[, c(1,5)] 
 data <- na.omit(data)
 
 summary(data[which(data$Survived == 1),2])
