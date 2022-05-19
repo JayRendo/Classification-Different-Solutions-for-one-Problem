@@ -1,3 +1,4 @@
+set.seed(1)
 #loading data and necessary libraries
 library(PPtreeViz)
 data <- cats
